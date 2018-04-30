@@ -15,3 +15,8 @@ after_success:
   - npm install coveralls
   # Fix paths in lcov.info so they match Coveralls' expectation that they were generated on Travis.
   - docker exec ingredient-demo cat /app/coverage/lcov.info | sed --expression='s@^SF:\/app@SF:'"${PWD}"'@g' | ./node_modules/coveralls/bin/coveralls.js
+deploy:
+  provider: firebase
+  token:
+    secure: GD/hj6rgRr4Q02dYWJAb5P5T33oiJBBcrk0j8cW5EpU20LB3AlPopm2LHXOBVSzfHBJyyE0S4fEPdiynfkPQ0ZOj5konC4q7ZPU1LLLx5H0VZ7fdm0bqwoIEF5HDlu8um9Ge7t6e5LF/Ia9AeoHcrcuj/DSY4vUpZdZbhdv5w22RG9BXto9lZxhhAtWTxqnYBRNC0sGc4STZiss2lg2Oqg1Kvm0hgTyezB7lhYmu4NFCxQRyJsPG0wUkyFkAAzJNRFqN2qdFn6u3+3zSkSBrIMXkaFL4ZkQF8pB/WZ/V9bAlWVtM7Zg+nj71cUXKMqFZKSDBUNzwL0YgzBaCXBGEDVhbIVi6xMubhe/klCWBrIZqzMwfKgHQf4FSlAO7/+q+fed2hBsUivzvSLXG/jcU1uv4RY8lW3XUcLS860Q19+r0XlqV1J3pa7kGAR+067Qtrna02k8+JEo7RAVk2v0ChNkISTchvoSFAZxCvs8weU7lZs1trjIHCydkvNjxCjR5ixvJuZD0tjBzYIpwNR7NIdQsJCzpwdvnauJL9kByen6rCY1qeZNZFG26hHkyZXH2qI8+Wuqm1DJv9exLcc8zyW84hITwYHU6DftP8RnGMUtTngcu78oC4+0RQEYaNp8q//ENFwOTBt7K4vcE3wJ0sbiR+W8F44O6Ev5CAby2TAs=
+  skip_cleanup: true
