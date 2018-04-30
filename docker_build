@@ -1,0 +1,22 @@
+#!/bin/bash
+
+ # Exit on first failing command.
+ set -e
+ # Echo commands to console.
+ set -x
+
+IMAGE_NAME="mtlynch/protractor"
+CONTAINER_NAME="ingredient-demo"
+
+docker version
+
+docker run \
+  --tty \
+  --detach \
+  --volume "${PWD}:/app" \
+  --volume "node_modules:/app/node_modules" \
+  --name "$CONTAINER_NAME" \
+  "$IMAGE_NAME"
+
+docker exec "$CONTAINER_NAME" npm install
+docker exec "$CONTAINER_NAME" bash ./build

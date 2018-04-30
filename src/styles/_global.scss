@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+html {
+  overflow-x: hidden;
+  @include respond-to('small') {
+    font-size: 2vh;
+  }
+}
+
+body {
+  @extend %font-text;
+  background-size: 100vw 100vh;
+}
+
+h1 {
+  @extend %font-headline;
+  font-size: 3rem;
+}
+
+h2 {
+  @extend %font-headline;
+  font-size: 2rem;
+}
+
+h3 {
+  @extend %font-headline;
+}
+
+h4 {
+  @extend %font-headline;
+}
+
+p {
+  @extend %font-text;
+  font-size: 1.4rem;
+}
+
+button {
+  @extend %font-headline;
+  text-transform: uppercase;
+}
+
+a:link,
+a:active,
+a:visited {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+mark {
+  display: inline;
+  margin: 0px !important;
+  padding: 0px !important;
+  font-weight: 600;
+}
