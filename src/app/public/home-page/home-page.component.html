@@ -1,18 +1,25 @@
-<input type="text" id="ingredientRaw" placeholder="Enter an ingredient to parse" [(ngModel)]="ingredientRaw">
-<input type="submit" value="Parse" name="Parse" (click)="parse(ingredientRaw)" [disabled]="isWaitingForParseResult" />
-<ul *ngIf="isWaitingForParseResult">
-  <p>Thinking...</p>
-</ul>
-<ul *ngIf="parseResult && parseResult.error">
+<mat-toolbar>
+  <span>Ingredient Parser Demo</span>
+</mat-toolbar>
+<form>
+    <mat-form-field class="input-full-width">
+      <input matInput placeholder="Ingredient to parse" value="1/2 cup sugar"  name="ingredientRaw"[(ngModel)]="ingredientRaw">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="parse(ingredientRaw)" [disabled]="isWaitingForParseResult">Parse</button>
+  </form>
+<div *ngIf="isWaitingForParseResult">
+    <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="parseResult && parseResult.error">
   <p class="error">{{ parseResult.error }}</p>
-</ul>
-<ul *ngIf="!isWaitingForParseResult && parseResult && parseResult.ingredientParsed">
-  <li><span class="fieldName">Quantity</span>: {{ parseResult.ingredientParsed.quantity }}</li>
-  <li><span class="fieldName">Unit</span>: {{ parseResult.ingredientParsed.unit }}</li>
-  <li><span class="fieldName">Name</span>: {{ parseResult.ingredientParsed.name }}</li>
-  <li><span class="fieldName">Other</span>: {{ parseResult.ingredientParsed.other }}</li>
-  <li><span class="fieldName">Comment</span>: {{ parseResult.ingredientParsed.comment }}</li>
-</ul>
-<ul *ngIf="parseResult">
-  <li><span class="fieldName">Requests remaining</span>: {{ parseResult.requestsRemaining }}</li>
-</ul>
+</div>
+<mat-list role="list" *ngIf="!isWaitingForParseResult && parseResult && parseResult.ingredientParsed">
+    <mat-list-item role="listitem"><span class="fieldName">Quantity</span>: {{ parseResult.ingredientParsed.quantity }}</mat-list-item>
+    <mat-list-item role="listitem"><span class="fieldName">Unit</span>: {{ parseResult.ingredientParsed.unit }}</mat-list-item>
+    <mat-list-item role="listitem"><span class="fieldName">Name</span>: {{ parseResult.ingredientParsed.name }}</mat-list-item>
+    <mat-list-item role="listitem"><span class="fieldName">Other</span>: {{ parseResult.ingredientParsed.other }}</mat-list-item>
+    <mat-list-item role="listitem"><span class="fieldName">Comment</span>: {{ parseResult.ingredientParsed.comment }}</mat-list-item>
+  </mat-list>
+<mat-list role="list" *ngIf="parseResult">
+  <mat-list-item role="listitem"><span class="fieldName">Requests remaining</span>: {{ parseResult.requestsRemaining }}</mat-list-item>
+</mat-list>  

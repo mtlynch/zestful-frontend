@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { IngredientParsed, ParseResult } from '../../_models/parse-result';
 import { ParserService } from '../../_services/parser.service';
 

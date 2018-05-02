@@ -1,3 +1,22 @@
+@import '~styles/breakpoints';
+
+mat-toolbar {
+  margin-bottom: 10%;
+  @include respond-to('small') {
+    margin-bottom: 25%;
+  }
+}
+
+form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.input-full-width {
+  width: 100%;
+}
+
 span.fieldName {
   font-weight: bold;
 }

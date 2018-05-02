@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Injectable } from '@angular/core';
+import { Injectable, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
@@ -8,7 +8,6 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { HomePageComponent } from './home-page.component';
 import { ParseResult } from '../../_models/parse-result';
 import { ParserService } from '../../_services/parser.service';
-
 
 @Injectable()
 export class MockParserService {
@@ -32,6 +31,7 @@ describe('HomePageComponent', () => {
       providers: [
         { provide: ParserService, useClass: MockParserService },
       ],
+      schemas: [NO_ERRORS_SCHEMA],
     })
     .compileComponents();
   }));
