@@ -2,11 +2,11 @@
   <span>Ingredient Parser Demo</span>
 </mat-toolbar>
 <form>
-    <mat-form-field class="input-full-width" floatPlaceholder="never">
-      <input matInput placeholder="2 cups brown sugar" name="ingredientRaw" [(ngModel)]="ingredientRaw">
+    <mat-form-field class="input-full-width" floatPlaceholder="never" hideRequiredMarker>
+      <input matInput placeholder="2 cups brown sugar" name="ingredientRaw" [(ngModel)]="ingredientRaw" required>
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="parse(ingredientRaw)" [disabled]="isWaitingForParseResult">Parse</button>
-    <button mat-raised-button (click)="reset()">Reset</button>
+    <button mat-raised-button color="primary" (click)="parse(ingredientRaw)" [disabled]="isWaitingForParseResult || !ingredientRaw">Parse</button>
+    <button mat-raised-button (click)="reset()" [disabled]="!ingredientRaw">Reset</button>
   </form>
 <div *ngIf="isWaitingForParseResult">
     <mat-spinner></mat-spinner>
