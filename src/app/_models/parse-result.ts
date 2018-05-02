@@ -8,5 +8,8 @@ export class IngredientParsed {
 }
 
 export class ParseResult {
-  constructor(public ingredientParsed?: IngredientParsed, public error?: string) {}
+  constructor(
+    public ingredientParsed?: IngredientParsed,
+    public error?: string,
+    public requestsRemaining?: number) {}
 }

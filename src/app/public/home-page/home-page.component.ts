@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IngredientParsed } from '../../_models/parse-result';
+import { IngredientParsed, ParseResult } from '../../_models/parse-result';
 import { ParserService } from '../../_services/parser.service';
 
 @Component({
@@ -9,18 +9,22 @@ import { ParserService } from '../../_services/parser.service';
 })
 export class HomePageComponent implements OnInit {
   ingredientRaw: string;
-  ingredientParsed: IngredientParsed;
+  isWaitingForParseResult: boolean = false;
+  parseResult: ParseResult;
 
   constructor(private parserService: ParserService) { }
 
   ngOnInit() {}
 
   parse(raw: string) {
+    this.isWaitingForParseResult = true;
     this.parserService.parseIngredient(raw).subscribe(
       (response) => {
-        this.ingredientParsed = response.ingredientParsed;
+        this.isWaitingForParseResult = false;
+        this.parseResult = response;
       },
       (error) => {
+        this.isWaitingForParseResult = false;
         console.log(error);
       });
   }

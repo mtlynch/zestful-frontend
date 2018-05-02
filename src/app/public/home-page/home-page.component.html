@@ -1,9 +1,18 @@
 <input type="text" id="ingredientRaw" placeholder="Enter an ingredient to parse" [(ngModel)]="ingredientRaw">
-<input type="submit" value="Parse" name="Parse" (click)="parse(ingredientRaw)" />
-<ul *ngIf="ingredientParsed">
-  <li><span class="fieldName">Quantity</span>: {{ ingredientParsed.quantity }}</li>
-  <li><span class="fieldName">Unit</span>: {{ ingredientParsed.unit }}</li>
-  <li><span class="fieldName">Name</span>: {{ ingredientParsed.name }}</li>
-  <li><span class="fieldName">Other</span>: {{ ingredientParsed.other }}</li>
-  <li><span class="fieldName">Comment</span>: {{ ingredientParsed.comment }}</li>
+<input type="submit" value="Parse" name="Parse" (click)="parse(ingredientRaw)" [disabled]="isWaitingForParseResult" />
+<ul *ngIf="isWaitingForParseResult">
+  <p>Thinking...</p>
+</ul>
+<ul *ngIf="parseResult && parseResult.error">
+  <p class="error">{{ parseResult.error }}</p>
+</ul>
+<ul *ngIf="!isWaitingForParseResult && parseResult && parseResult.ingredientParsed">
+  <li><span class="fieldName">Quantity</span>: {{ parseResult.ingredientParsed.quantity }}</li>
+  <li><span class="fieldName">Unit</span>: {{ parseResult.ingredientParsed.unit }}</li>
+  <li><span class="fieldName">Name</span>: {{ parseResult.ingredientParsed.name }}</li>
+  <li><span class="fieldName">Other</span>: {{ parseResult.ingredientParsed.other }}</li>
+  <li><span class="fieldName">Comment</span>: {{ parseResult.ingredientParsed.comment }}</li>
+</ul>
+<ul *ngIf="parseResult">
+  <li><span class="fieldName">Requests remaining</span>: {{ parseResult.requestsRemaining }}</li>
 </ul>
