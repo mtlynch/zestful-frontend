@@ -30,4 +30,9 @@ export class HomePageComponent implements OnInit {
       });
   }
 
+  reset() {
+    this.ingredientRaw = '';
+    this.parseResult = null;
+  }
+
 }
