@@ -12,6 +12,7 @@ export class HomePageComponent implements OnInit {
   ingredientRaw: string;
   isWaitingForParseResult: boolean = false;
   parseResult: ParseResult;
+  error: string;
 
   constructor(private parserService: ParserService) { }
 
@@ -19,20 +20,34 @@ export class HomePageComponent implements OnInit {
 
   parse(raw: string) {
     this.isWaitingForParseResult = true;
+    this.error = null;
+    this.parseResult = null;
     this.parserService.parseIngredient(raw).subscribe(
       (response) => {
         this.isWaitingForParseResult = false;
         this.parseResult = response;
+        if (this.parseResult.error) {
+          this.error = this.parseResult.error;
+        }
       },
       (error) => {
         this.isWaitingForParseResult = false;
         console.log(error);
+        if (error.error && this.isString(error.error)) {
+          this.error = error.error;
+        } else {
+          this.error = error.statusText;
+        }
       });
   }
 
   reset() {
     this.ingredientRaw = '';
     this.parseResult = null;
+  }
+
+  private isString(x) {
+    return Object.prototype.toString.call(x) === '[object String]';
   }
 
 }

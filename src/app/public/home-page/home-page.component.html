@@ -11,8 +11,8 @@
 <div *ngIf="isWaitingForParseResult">
     <mat-spinner></mat-spinner>
 </div>
-<div *ngIf="parseResult && parseResult.error">
-  <p class="error">{{ parseResult.error }}</p>
+<div class="error" *ngIf="error">
+  <p>{{ error }}</p>
 </div>
 <mat-list role="list" *ngIf="!isWaitingForParseResult && parseResult && parseResult.ingredientParsed">
     <mat-list-item role="listitem"><span class="fieldName">Quantity</span>: {{ parseResult.ingredientParsed.quantity }}</mat-list-item>
