@@ -3,7 +3,6 @@ export class IngredientParsed {
         public quantity?: number,
         public unit?: string,
         public name?: string,
-        public other?: string,
         public comment?: string) {}
 }
 
