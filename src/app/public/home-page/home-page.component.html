@@ -14,12 +14,28 @@
 <div class="error" *ngIf="error">
   <p>{{ error }}</p>
 </div>
-<mat-list role="list" *ngIf="!isWaitingForParseResult && parseResult && parseResult.ingredientParsed">
-    <mat-list-item role="listitem"><span class="fieldName">Quantity</span>: {{ parseResult.ingredientParsed.quantity }}</mat-list-item>
-    <mat-list-item role="listitem"><span class="fieldName">Unit</span>: {{ parseResult.ingredientParsed.unit }}</mat-list-item>
-    <mat-list-item role="listitem"><span class="fieldName">Name</span>: {{ parseResult.ingredientParsed.name }}</mat-list-item>
-    <mat-list-item role="listitem"><span class="fieldName">Preparation note</span>: {{ parseResult.ingredientParsed.comment }}</mat-list-item>
-  </mat-list>
-<mat-list role="list" *ngIf="parseResult">
-  <mat-list-item role="listitem"><span class="fieldName">Requests remaining</span>: {{ parseResult.requestsRemaining }}</mat-list-item>
+<div
+  class="result-cards"
+  *ngIf="!isWaitingForParseResult && ingredientParsed">
+  <mat-card *ngIf="ingredientParsed.quantity">
+      <mat-card-title>{{ ingredientParsed.quantity | number:'1.0-2' }}</mat-card-title>
+      <mat-card-subtitle>quantity</mat-card-subtitle>
+  </mat-card>
+  <mat-card *ngIf="ingredientParsed.unit">
+      <mat-card-title>{{ ingredientParsed.unit }}</mat-card-title>
+      <mat-card-subtitle>units</mat-card-subtitle>
+  </mat-card>
+  <mat-card *ngIf="ingredientParsed.name">
+      <mat-card-title>{{ ingredientParsed.name }}</mat-card-title>
+      <mat-card-subtitle>product</mat-card-subtitle>
+  </mat-card>
+  <mat-card *ngIf="ingredientParsed.comment">
+      <mat-card-title>{{ ingredientParsed.comment }}</mat-card-title>
+      <mat-card-subtitle>preparation instructions</mat-card-subtitle>
+  </mat-card>
+</div>
+<mat-list role="list" *ngIf="requestsRemaining !== null">
+  <mat-list-item role="listitem">
+    <span class="fieldName">Requests remaining</span>: {{ requestsRemaining }}
+  </mat-list-item>
 </mat-list>  

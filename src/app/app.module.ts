@@ -4,6 +4,7 @@ import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {
   MatButtonModule,
+  MatCardModule,
   MatFormFieldModule,
   MatInputModule,
   MatListModule,
@@ -31,6 +32,7 @@ import { HomePageComponent } from './public/home-page/home-page.component';
     FormsModule,
     HttpClientModule,
     MatButtonModule,
+    MatCardModule,
     MatFormFieldModule,
     MatInputModule,
     MatListModule,

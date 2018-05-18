@@ -11,8 +11,9 @@ import { ParserService } from '../../_services/parser.service';
 export class HomePageComponent implements OnInit {
   ingredientRaw: string;
   isWaitingForParseResult: boolean = false;
-  parseResult: ParseResult;
+  ingredientParsed: IngredientParsed;
   error: string;
+  requestsRemaining: number;
 
   constructor(private parserService: ParserService) { }
 
@@ -21,13 +22,18 @@ export class HomePageComponent implements OnInit {
   parse(raw: string) {
     this.isWaitingForParseResult = true;
     this.error = null;
-    this.parseResult = null;
+    this.ingredientParsed = null;
     this.parserService.parseIngredient(raw).subscribe(
       (response) => {
         this.isWaitingForParseResult = false;
-        this.parseResult = response;
-        if (this.parseResult.error) {
-          this.error = this.parseResult.error;
+        const parseResult = response;
+        if (parseResult.error) {
+          this.error = parseResult.error;
+          this.ingredientParsed = null;
+        } else {
+          this.ingredientParsed = parseResult.ingredientParsed;
+          this.requestsRemaining = parseResult.requestsRemaining;
+          this.error = null;
         }
       },
       (error) => {
@@ -43,7 +49,8 @@ export class HomePageComponent implements OnInit {
 
   reset() {
     this.ingredientRaw = '';
-    this.parseResult = null;
+    this.ingredientParsed = null;
+    this.error = null;
   }
 
   private isString(x) {

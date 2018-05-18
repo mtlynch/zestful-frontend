@@ -28,3 +28,13 @@ span.fieldName {
 div.error {
   margin-top: 15px;
 }
+
+div.result-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  @include respond-to('medium') {
+    flex-direction: column;
+  }
+}
