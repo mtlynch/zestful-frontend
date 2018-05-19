@@ -3,7 +3,11 @@
 mat-toolbar {
   margin-bottom: 10%;
   @include respond-to('small') {
-    margin-bottom: 25%;
+    font-size: 14pt;
+    margin-bottom: 10px;
+  }
+  @include respond-to('x-small') {
+    font-size: 12pt;
   }
 }
 
@@ -30,11 +34,19 @@ div.error {
 }
 
 div.result-cards {
+  padding: 25px 0px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 
   @include respond-to('medium') {
     flex-direction: column;
+  }
+}
+
+mat-card {
+  margin-right: 25px;
+  @include respond-to('medium') {
+    margin-right: 2px;
   }
 }

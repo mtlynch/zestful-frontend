@@ -1,9 +1,9 @@
-<mat-toolbar>
-  <span>Ingredient Parser Demo</span>
+<mat-toolbar color="primary">
+  <span>Ingredient Parser - Developer Demo</span>
 </mat-toolbar>
 <form>
     <mat-form-field class="input-full-width" floatPlaceholder="never" hideRequiredMarker>
-      <input matInput placeholder="2 cups brown sugar" name="ingredientRaw" [(ngModel)]="ingredientRaw" required>
+      <input matInput placeholder="1 1/2 cups finely chopped red onions" name="ingredientRaw" [(ngModel)]="ingredientRaw" required>
     </mat-form-field>
     <button mat-raised-button color="primary" (click)="parse(ingredientRaw)" [disabled]="isWaitingForParseResult || !ingredientRaw">Parse</button>
     <button mat-raised-button (click)="reset()" [disabled]="!ingredientRaw">Reset</button>
@@ -34,8 +34,6 @@
       <mat-card-subtitle>preparation instructions</mat-card-subtitle>
   </mat-card>
 </div>
-<mat-list role="list" *ngIf="requestsRemaining !== null">
-  <mat-list-item role="listitem">
-    <span class="fieldName">Requests remaining</span>: {{ requestsRemaining }}
-  </mat-list-item>
-</mat-list>  
+<div *ngIf="requestsRemaining !== null">
+  <span class="fieldName">Requests remaining</span>: {{ requestsRemaining }}
+</div>
