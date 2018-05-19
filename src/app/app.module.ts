@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {
   MatButtonModule,
   MatCardModule,
+  MatExpansionModule,
   MatFormFieldModule,
   MatInputModule,
   MatProgressSpinnerModule,
@@ -19,11 +20,13 @@ import { ParserService } from './_services/parser.service';
 
 // Public pages
 import { HomePageComponent } from './public/home-page/home-page.component';
+import { MailingListComponent } from './_components/mailing-list/mailing-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
+    MailingListComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -32,6 +35,7 @@ import { HomePageComponent } from './public/home-page/home-page.component';
     HttpClientModule,
     MatButtonModule,
     MatCardModule,
+    MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
     MatProgressSpinnerModule,
