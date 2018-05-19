@@ -13,7 +13,7 @@ export class HomePageComponent implements OnInit {
   isWaitingForParseResult: boolean = false;
   ingredientParsed: IngredientParsed;
   error: string;
-  requestsRemaining: number;
+  requestsRemaining: number = null;
 
   constructor(private parserService: ParserService) { }
 
