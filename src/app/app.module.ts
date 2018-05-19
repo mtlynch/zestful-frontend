@@ -7,7 +7,6 @@ import {
   MatCardModule,
   MatFormFieldModule,
   MatInputModule,
-  MatListModule,
   MatProgressSpinnerModule,
   MatToolbarModule,
 } from '@angular/material';
@@ -35,7 +34,6 @@ import { HomePageComponent } from './public/home-page/home-page.component';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatListModule,
     MatProgressSpinnerModule,
     MatToolbarModule,
   ],
