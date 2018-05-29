@@ -15,13 +15,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 
+// Modules
+import { AppRoutingModule } from './app-routing.module';
+
 // Services
 import { ParserService } from './_services/parser.service';
 
-// Public pages
-import { HomePageComponent } from './public/home-page/home-page.component';
+// Components
 import { MailingListComponent } from './_components/mailing-list/mailing-list.component';
 import { NavComponent } from './_components/nav/nav.component';
+
+// Public pages
+import { HomePageComponent } from './public/home-page/home-page.component';
+import { SignUpComponent } from './public/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +35,10 @@ import { NavComponent } from './_components/nav/nav.component';
     HomePageComponent,
     MailingListComponent,
     NavComponent,
+    SignUpComponent,
   ],
   imports: [
+    AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
     FormsModule,

@@ -1,13 +1,13 @@
-<app-nav></app-nav>
+<h1>Developer Demo</h1>
 <form>
-    <mat-form-field class="input-full-width" floatPlaceholder="never" hideRequiredMarker>
-      <input matInput placeholder="1 1/2 cups finely chopped red onions" name="ingredientRaw" [(ngModel)]="ingredientRaw" required>
-    </mat-form-field>
-    <button mat-raised-button color="primary" (click)="parse(ingredientRaw)" [disabled]="isWaitingForParseResult || !ingredientRaw">Parse</button>
-    <button mat-raised-button (click)="reset()" [disabled]="!ingredientRaw">Reset</button>
-  </form>
+  <mat-form-field class="input-full-width" floatPlaceholder="never" hideRequiredMarker>
+    <input matInput placeholder="1 1/2 cups finely chopped red onions" name="ingredientRaw" [(ngModel)]="ingredientRaw" required>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="parse(ingredientRaw)" [disabled]="isWaitingForParseResult || !ingredientRaw">Parse</button>
+  <button mat-raised-button (click)="reset()" [disabled]="!ingredientRaw">Reset</button>
+</form>
 <div *ngIf="isWaitingForParseResult">
-    <mat-spinner></mat-spinner>
+  <mat-spinner></mat-spinner>
 </div>
 <div class="error" *ngIf="error">
   <p>{{ error }}</p>
@@ -16,32 +16,22 @@
   class="result-cards"
   *ngIf="!isWaitingForParseResult && ingredientParsed">
   <mat-card *ngIf="ingredientParsed.quantity">
-      <mat-card-title>{{ ingredientParsed.quantity | number:'1.0-2' }}</mat-card-title>
-      <mat-card-subtitle>quantity</mat-card-subtitle>
+    <mat-card-title>{{ ingredientParsed.quantity | number:'1.0-2' }}</mat-card-title>
+    <mat-card-subtitle>quantity</mat-card-subtitle>
   </mat-card>
   <mat-card *ngIf="ingredientParsed.unit">
-      <mat-card-title>{{ ingredientParsed.unit }}</mat-card-title>
-      <mat-card-subtitle>units</mat-card-subtitle>
+    <mat-card-title>{{ ingredientParsed.unit }}</mat-card-title>
+    <mat-card-subtitle>units</mat-card-subtitle>
   </mat-card>
   <mat-card *ngIf="ingredientParsed.name">
-      <mat-card-title>{{ ingredientParsed.name }}</mat-card-title>
-      <mat-card-subtitle>product</mat-card-subtitle>
+    <mat-card-title>{{ ingredientParsed.name }}</mat-card-title>
+    <mat-card-subtitle>product</mat-card-subtitle>
   </mat-card>
   <mat-card *ngIf="ingredientParsed.comment">
-      <mat-card-title>{{ ingredientParsed.comment }}</mat-card-title>
-      <mat-card-subtitle>preparation instructions</mat-card-subtitle>
+    <mat-card-title>{{ ingredientParsed.comment }}</mat-card-title>
+    <mat-card-subtitle>preparation instructions</mat-card-subtitle>
   </mat-card>
 </div>
 <div *ngIf="requestsRemaining !== null">
   <span class="fieldName">Requests remaining</span>: {{ requestsRemaining }}
 </div>
-<mat-expansion-panel>
-  <mat-expansion-panel-header>
-    <mat-panel-title>
-      Sign up
-    </mat-panel-title>
-  </mat-expansion-panel-header>
-
-  <app-mailing-list></app-mailing-list>
-
-</mat-expansion-panel>

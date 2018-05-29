@@ -9,13 +9,9 @@
 }
 
 html {
-  padding-top: 12px;
-  padding-left: 5%;
-  padding-right: 5%;
   overflow-x: hidden;
   @include respond-to('small') {
     font-size: 2vh;
-    padding-top: 1%;
   }
 }
 
@@ -27,6 +23,7 @@ body {
 h1 {
   @extend %font-roboto-regular;
   font-size: 3rem;
+  padding-bottom: 45px;
 }
 
 h2 {

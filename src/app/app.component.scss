@@ -1,0 +1,12 @@
+@import '~styles/breakpoints';
+
+div.page-content {
+  padding-top: 12px;
+  padding-left: 5%;
+  padding-right: 5%;
+  overflow-x: hidden;
+  @include respond-to('small') {
+    font-size: 2vh;
+    padding-top: 1%;
+  }
+}
