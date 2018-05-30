@@ -8,6 +8,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { HomePageComponent } from './home-page.component';
 import { ParseResult } from '../../_models/parse-result';
 import { ParserService } from '../../_services/parser.service';
+import { CurlCmdPipe } from '../../_pipes/curl-cmd.pipe';
 
 @Injectable()
 export class MockParserService {
@@ -23,12 +24,13 @@ describe('HomePageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [HomePageComponent],
+      declarations: [HomePageComponent, CurlCmdPipe],
       imports: [
         HttpClientTestingModule,
         FormsModule,
       ],
       providers: [
+        CurlCmdPipe,
         { provide: ParserService, useClass: MockParserService },
       ],
       schemas: [NO_ERRORS_SCHEMA],

@@ -29,7 +29,11 @@ span.fieldName {
   color: red;
 }
 
-div.error {
+.code {
+  font-family: Consolas, 'Courier New', Courier, monospace;
+}
+
+div.top-level {
   margin-top: 15px;
 }
 

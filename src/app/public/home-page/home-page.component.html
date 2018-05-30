@@ -6,14 +6,14 @@
   <button mat-raised-button color="primary" (click)="parse(ingredientRaw)" [disabled]="isWaitingForParseResult || !ingredientRaw">Parse</button>
   <button mat-raised-button (click)="reset()" [disabled]="!ingredientRaw">Reset</button>
 </form>
-<div *ngIf="isWaitingForParseResult">
+<div *ngIf="isWaitingForParseResult" class="top-level">
   <mat-spinner></mat-spinner>
 </div>
-<div class="error" *ngIf="error">
+<div class="error" *ngIf="error" class="top-level">
   <p>{{ error }}</p>
 </div>
 <div
-  class="result-cards"
+  class="result-cards top-level"
   *ngIf="!isWaitingForParseResult && ingredientParsed">
   <mat-card *ngIf="ingredientParsed.quantity">
     <mat-card-title>{{ ingredientParsed.quantity | number:'1.0-2' }}</mat-card-title>
@@ -32,6 +32,10 @@
     <mat-card-subtitle>preparation instructions</mat-card-subtitle>
   </mat-card>
 </div>
-<div *ngIf="requestsRemaining !== null">
+<div *ngIf="requestsRemaining !== null" class="top-level">
   <span class="fieldName">Requests remaining</span>: {{ requestsRemaining }}
+</div>
+<div *ngIf="curlExample" class="top-level">
+  <div>Or, using <span class="code">curl</span>:</div>
+  <app-code-snippet [contents]="curlExample"></app-code-snippet>
 </div>

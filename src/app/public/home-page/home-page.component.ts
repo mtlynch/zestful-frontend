@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
 import { IngredientParsed, ParseResult } from '../../_models/parse-result';
 import { ParserService } from '../../_services/parser.service';
+import { CurlCmdPipe } from '../../_pipes/curl-cmd.pipe';
 
 @Component({
   selector: 'app-home-page',
@@ -14,8 +16,9 @@ export class HomePageComponent implements OnInit {
   ingredientParsed: IngredientParsed;
   error: string;
   requestsRemaining: number = null;
+  curlExample: string = null;
 
-  constructor(private parserService: ParserService) { }
+  constructor(private parserService: ParserService, private curlCmdPipe: CurlCmdPipe) { }
 
   ngOnInit() {}
 
@@ -26,6 +29,7 @@ export class HomePageComponent implements OnInit {
     this.parserService.parseIngredient(raw).subscribe(
       (response) => {
         this.isWaitingForParseResult = false;
+        this.curlExample = this.curlCmdPipe.transform(raw, environment.backendBaseUrl);
         const parseResult = response;
         if (parseResult.error) {
           this.error = parseResult.error;
@@ -51,6 +55,7 @@ export class HomePageComponent implements OnInit {
     this.ingredientRaw = '';
     this.ingredientParsed = null;
     this.error = null;
+    this.curlExample = null;
   }
 
   private isString(x) {
