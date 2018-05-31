@@ -5,10 +5,11 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-import { HomePageComponent } from './home-page.component';
 import { ParseResult } from '../../_models/parse-result';
 import { ParserService } from '../../_services/parser.service';
 import { CurlCmdPipe } from '../../_pipes/curl-cmd.pipe';
+
+import { DemoComponent } from './demo.component';
 
 @Injectable()
 export class MockParserService {
@@ -18,13 +19,13 @@ export class MockParserService {
   }
 }
 
-describe('HomePageComponent', () => {
-  let component: HomePageComponent;
-  let fixture: ComponentFixture<HomePageComponent>;
+describe('DemoComponent', () => {
+  let component: DemoComponent;
+  let fixture: ComponentFixture<DemoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [HomePageComponent, CurlCmdPipe],
+      declarations: [DemoComponent, CurlCmdPipe],
       imports: [
         HttpClientTestingModule,
         FormsModule,
@@ -39,7 +40,7 @@ describe('HomePageComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomePageComponent);
+    fixture = TestBed.createComponent(DemoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -48,3 +49,4 @@ describe('HomePageComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

@@ -6,11 +6,11 @@ import { ParserService } from '../../_services/parser.service';
 import { CurlCmdPipe } from '../../_pipes/curl-cmd.pipe';
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss'],
+  selector: 'app-demo',
+  templateUrl: './demo.component.html',
+  styleUrls: ['./demo.component.scss'],
 })
-export class HomePageComponent implements OnInit {
+export class DemoComponent implements OnInit {
   ingredientRaw: string;
   isWaitingForParseResult: boolean = false;
   ingredientParsed: IngredientParsed;

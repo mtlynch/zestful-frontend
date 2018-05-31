@@ -27,17 +27,17 @@ import { ParserService } from './_services/parser.service';
 // Components
 import { MailingListComponent } from './_components/mailing-list/mailing-list.component';
 import { NavComponent } from './_components/nav/nav.component';
+import { CodeSnippetComponent } from './_components/code-snippet/code-snippet.component';
 
 // Public pages
-import { HomePageComponent } from './public/home-page/home-page.component';
 import { SignUpComponent } from './public/sign-up/sign-up.component';
-import { CodeSnippetComponent } from './_components/code-snippet/code-snippet.component';
+import { DemoComponent } from './public/demo/demo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CurlCmdPipe,
-    HomePageComponent,
+    DemoComponent,
     MailingListComponent,
     NavComponent,
     SignUpComponent,

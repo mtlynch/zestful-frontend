@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomePageComponent } from './public/home-page/home-page.component';
+import { DemoComponent } from './public/demo/demo.component';
 import { SignUpComponent } from './public/sign-up/sign-up.component';
 
 const appRoutes: Routes = [
   {
     path: '',
-    component: HomePageComponent,
+    component: DemoComponent,
     pathMatch: 'full',
   },
   {
     path: 'demo',
-    component: HomePageComponent,
+    component: DemoComponent,
     pathMatch: 'full',
   },
   {
@@ -22,7 +22,7 @@ const appRoutes: Routes = [
   },
   {
     path: '**',
-    component: HomePageComponent,
+    component: DemoComponent,
   },
 ];
 

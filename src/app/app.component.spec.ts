@@ -1,7 +1,7 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './public/home-page/home-page.component';
+import { DemoComponent } from './public/demo/demo.component';
 import { FormsModule } from '@angular/forms';
 import { ParserService } from './_services/parser.service';
 import { CurlCmdPipe } from './_pipes/curl-cmd.pipe';
@@ -13,7 +13,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         CurlCmdPipe,
-        HomePageComponent,
+        DemoComponent,
       ],
       imports: [
         FormsModule,
