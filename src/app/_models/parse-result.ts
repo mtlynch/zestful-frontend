@@ -2,8 +2,8 @@ export class IngredientParsed {
   constructor(
         public quantity?: number,
         public unit?: string,
-        public name?: string,
-        public comment?: string) {}
+        public product?: string,
+        public preparationNotes?: string) {}
 }
 
 export class ParseResult {

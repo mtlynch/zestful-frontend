@@ -23,12 +23,12 @@
     <mat-card-title>{{ ingredientParsed.unit }}</mat-card-title>
     <mat-card-subtitle>units</mat-card-subtitle>
   </mat-card>
-  <mat-card *ngIf="ingredientParsed.name">
-    <mat-card-title>{{ ingredientParsed.name }}</mat-card-title>
+  <mat-card *ngIf="ingredientParsed.product">
+    <mat-card-title>{{ ingredientParsed.product }}</mat-card-title>
     <mat-card-subtitle>product</mat-card-subtitle>
   </mat-card>
-  <mat-card *ngIf="ingredientParsed.comment">
-    <mat-card-title>{{ ingredientParsed.comment }}</mat-card-title>
+  <mat-card *ngIf="ingredientParsed.preparationNotes">
+    <mat-card-title>{{ ingredientParsed.preparationNotes }}</mat-card-title>
     <mat-card-subtitle>preparation instructions</mat-card-subtitle>
   </mat-card>
 </div>
