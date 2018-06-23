@@ -6,9 +6,16 @@ export class IngredientParsed {
         public preparationNotes?: string) {}
 }
 
-export class ParseResult {
+export class IngredientResult {
   constructor(
+    public ingredientRaw?: string,
     public ingredientParsed?: IngredientParsed,
+    public error?: string) {}
+}
+
+export class ParseResults {
+  constructor(
+    public results?: IngredientResult[],
     public error?: string,
     public requestsRemaining?: number) {}
 }

@@ -11,16 +11,24 @@ describe('CurlCmdPipe', () => {
   it('should generate curl command', () => {
     expect(pipe.transform('2 lbs carrots', 'http://dummyurl.com')).toBe(`
 curl \\
-  --get \\
-  --data-urlencode 'q=2 lbs carrots' \\
-  "http://dummyurl.com/v1/parse"`.trim());
+  --header "Content-Type: application/json" \\
+  --data '{
+    "ingredients": [
+      "2 lbs carrots"
+    ]
+  }' \\
+  "http://dummyurl.com/parseIngredients"`.trim());
   });
 
   it('should escape single quotes', () => {
     expect(pipe.transform('2 cups tomatoes (don\'t chop them up; you won\'t like it)', 'http://dummyurl.com')).toBe(`
 curl \\
-  --get \\
-  --data-urlencode 'q=2 cups tomatoes (don\\\'t chop them up; you won\\\'t like it)' \\
-  "http://dummyurl.com/v1/parse"`.trim());
+  --header "Content-Type: application/json" \\
+  --data '{
+    "ingredients": [
+      "2 cups tomatoes (don\\\'t chop them up; you won\\\'t like it)"
+    ]
+  }' \\
+  "http://dummyurl.com/parseIngredients"`.trim());
   });
 });

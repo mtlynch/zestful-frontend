@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-import { ParseResult } from '../../_models/parse-result';
+import { ParseResults } from '../../_models/parse-result';
 import { ParserService } from '../../_services/parser.service';
 import { CurlCmdPipe } from '../../_pipes/curl-cmd.pipe';
 
@@ -15,7 +15,7 @@ import { DemoComponent } from './demo.component';
 export class MockParserService {
 
   public parseIngredient(ingredientRaw: string) {
-    return Observable.of<ParseResult>({});
+    return Observable.of<ParseResults>({});
   }
 }
 

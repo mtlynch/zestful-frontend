@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../../environments/environment';
 
-import { IngredientParsed, ParseResult } from '../../_models/parse-result';
-import { ParserService } from '../../_services/parser.service';
+import { IngredientParsed, ParseResults } from '../../_models/parse-result';
+import { ParserService, ParseRequest } from '../../_services/parser.service';
 import { CurlCmdPipe } from '../../_pipes/curl-cmd.pipe';
 
 @Component({
@@ -26,7 +26,8 @@ export class DemoComponent implements OnInit {
     this.isWaitingForParseResult = true;
     this.error = null;
     this.ingredientParsed = null;
-    this.parserService.parseIngredient(raw).subscribe(
+    const request = new ParseRequest([raw]);
+    this.parserService.parseIngredients(request).subscribe(
       (response) => {
         this.isWaitingForParseResult = false;
         this.curlExample = this.curlCmdPipe.transform(raw, environment.backendBaseUrl);
@@ -35,7 +36,7 @@ export class DemoComponent implements OnInit {
           this.error = parseResult.error;
           this.ingredientParsed = null;
         } else {
-          this.ingredientParsed = parseResult.ingredientParsed;
+          this.ingredientParsed = parseResult.results[0].ingredientParsed;
           this.requestsRemaining = parseResult.requestsRemaining;
           this.error = null;
         }

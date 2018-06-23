@@ -9,9 +9,13 @@ export class CurlCmdPipe implements PipeTransform {
     const ingredientEscaped = ingredientRaw.replace(/'/g, '\\\'');
     return `
 curl \\
-  --get \\
-  --data-urlencode 'q=${ingredientEscaped}' \\
-  "${backendUrl}/v1/parse"
+  --header "Content-Type: application/json" \\
+  --data '{
+    "ingredients": [
+      "${ingredientEscaped}"
+    ]
+  }' \\
+  "${backendUrl}/parseIngredients"
 `.trim();
   }
 
