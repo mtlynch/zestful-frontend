@@ -1,3 +1,33 @@
+@import '~styles/breakpoints';
+
 .fill-remaining-space {
     flex: 1 1 auto;
+}
+
+mat-toolbar.full-size {
+  @include respond-to('small') {
+    display: none;
+  }
+}
+
+mat-toolbar.compressed {
+  display: none;
+  padding-top: 10px;
+  @include respond-to('small') {
+    display: block;
+  }
+}
+
+.menu-button {
+  margin-right: 45px;
+}
+
+.sidenav-container {
+  flex: 1 0 auto;
+  margin-top: 56px;
+}
+
+.sidenav-button {
+  font-size: 26pt;
+  padding: 25px 35px;
 }

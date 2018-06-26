@@ -7,8 +7,12 @@ import {
   MatCardModule,
   MatExpansionModule,
   MatFormFieldModule,
+  MatIconModule,
   MatInputModule,
+  MatListModule,
+  MatMenuModule,
   MatProgressSpinnerModule,
+  MatSidenavModule,
   MatToolbarModule,
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,6 +36,8 @@ import { CodeSnippetComponent } from './_components/code-snippet/code-snippet.co
 // Public pages
 import { SignUpComponent } from './public/sign-up/sign-up.component';
 import { DemoComponent } from './public/demo/demo.component';
+import { AboutComponent } from './public/about/about.component';
+import { FeatureCardComponent } from './_components/feature-card/feature-card.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +48,8 @@ import { DemoComponent } from './public/demo/demo.component';
     NavComponent,
     SignUpComponent,
     CodeSnippetComponent,
+    AboutComponent,
+    FeatureCardComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -53,8 +61,12 @@ import { DemoComponent } from './public/demo/demo.component';
     MatCardModule,
     MatExpansionModule,
     MatFormFieldModule,
+    MatIconModule,
     MatInputModule,
+    MatListModule,
+    MatMenuModule,
     MatProgressSpinnerModule,
+    MatSidenavModule,
     MatToolbarModule,
   ],
   providers: [CurlCmdPipe, ParserService],

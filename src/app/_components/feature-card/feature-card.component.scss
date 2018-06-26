@@ -1,0 +1,28 @@
+@import '~styles/breakpoints';
+
+.mat-card {
+  padding: 30px;
+  min-height: 350px;
+  max-width: 250px;
+  @include respond-to('small') {
+    margin: 10px auto;
+    max-width: 90%;
+  }
+}
+
+.mat-card-image {
+  width: 150px;
+  @include respond-to('small') {
+    width: 100%;
+  }
+  display: block;
+  margin: 40px auto;
+  padding-top: 40px;
+}
+
+.mat-card-content {
+  text-align: center;
+  @include respond-to('small') {
+    font-size: 24pt;
+  }
+}
