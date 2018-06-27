@@ -1,0 +1,112 @@
+<h1>API Reference</h1>
+
+<h2><span class="code">/parseIngredients</span> (POST)</h2>
+
+<h3>Overview</h3>
+
+<p>The <span class="code">/parseIngredients</span> endpoint parses a list of raw ingredient strings into structured JSON.</p>
+
+<h3>Request</h3>
+
+<app-code-snippet [contents]="requestExample"></app-code-snippet>
+
+<h4>Fields</h4>
+
+<ul>
+  <li><span class="code">ingredients</span>: A list of ingredient strings to parse.
+    <ul>
+        <li>This list must contain between 1 and 100 elements.</li>
+        <li>Each string in the list must be 1,024 characters or fewer.</li>
+        <li>Unicode strings are supported.</li>
+        <li>The strings may be HTML- or URL-encoded.</li>
+        <li>Any HTML tags in the ingredient strings will be ignored.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3>Response</h3>
+
+<app-code-snippet [contents]="responseExample"></app-code-snippet>
+
+<h4>Fields</h4>
+
+<ul>
+  <li>
+    <span class="code">results</span>: If the request was successful, contains a list of dictionaries with the keys
+    <span class="code">"ingredientRaw"</span>, <span class="code">"ingredientParsed"</span>, and
+    <span class="code">"error"</span>.
+    <ul>
+    <li>
+      <span class="code">ingredientRaw</span>: The original user-supplied ingredient string that corresponds with this parse
+      result.
+    </li>
+    <li>
+      <span class="code">ingredientParsed</span>: A dictionary containing the ingredient as structured data, containing the
+      keys <span class="code">"quantity"</span>, <span class="code">"unit"</span>, <span class="code">"product"</span>,
+      and <span class="code">"preparationNotes"</span>.
+      <ul>
+        <li>
+          <span class="code">quantity</span>: A number representing the quantity represented in the ingredient string,
+          or <span class="code">null</span> if no quantity was detected in the ingredient string.
+        </li>
+        <li>
+          <span class="code">unit</span>: A string containing the unit of measure in the ingredient string, or
+          <span class="code">null</span> if no unit of measure was found.
+          <ul>
+            <li>The unit of measure is always in singular form (e.g., <span class="code">"teaspoon"</span>, not
+              <span class="code">"teaspoons"</span>).
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="code">product</span>: The product a user buys to obtain this ingredient (e.g.,
+            <span class="code">"ground beef"</span>, <span class="code">"brown sugar"</span>).
+          <ul>
+            <li>
+              Size qualifications (e.g., <span class="code">"large onion"</span>, <span class="code">jumbo shrimp</span>) are
+              treated as part of a product's name.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="code">preparationNotes</span>: Instructions to the user about how to prepare this ingredient for a recipe (e.g.,
+            <span class="code">"finely chopped"</span>, <span class="code">"halved"</span>).
+          <ul>
+            <li>
+              Preparation notes refer to actions that a user takes after purchasing an ingredient. In some cases, such as "ground cinnamon"
+              this is ambiguous because a user can purchase whole cinnamon sticks and grind them (which would treat grinding as a preparation
+              step) or a user can purchase the product "ground cinnamon" (which has no preparation steps). For ambiguous cases, the parser
+              attempts to choose the product that is more common. For example, "ground cinnamon" is treated as a product name because most
+              users purchase cinnamon pre-ground, but "diced celery" is interpreted as product="celery", preparationNotes="diced" because
+              users more commonly dice celery instead of buying pre-diced celery.
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <span class="code">error</span>: An error message that describes what caused <span class="code">ingredientRaw</span>
+      to fail parsing.
+    </li>
+    </ul>  
+  </li>
+  <li><span class="code">error</span>: An error message that describes what caused the full parse request to fail.</li>
+</ul>
+
+<h2>Known Limitations</h2>
+
+<ul>
+  <li>
+    Mixtures of units (e.g., <span class="code">"2 8-oz cans of canned pumpkin"</span>,
+    <span class="code">"2 Tbsp + 1 Tsp of cinnamon"</span>) are not supported.
+  </li>
+  <li>
+    Non-numeric quantities (e.g., <span class="code">"Three tablespoons"</span>) are not supported.
+  </li>
+</ul>
+
+<h2>Client Libraries</h2>
+
+<p>We are currently developing client libraries for common languages like Python and Ruby.</p>
+
+<p>Want support for the language you use? <a href="mailto:contact@ingredientparser.com">Email</a> to let us know!</p>

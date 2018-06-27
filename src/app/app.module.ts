@@ -38,6 +38,7 @@ import { SignUpComponent } from './public/sign-up/sign-up.component';
 import { DemoComponent } from './public/demo/demo.component';
 import { AboutComponent } from './public/about/about.component';
 import { FeatureCardComponent } from './_components/feature-card/feature-card.component';
+import { DocsComponent } from './public/docs/docs.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { FeatureCardComponent } from './_components/feature-card/feature-card.co
     CodeSnippetComponent,
     AboutComponent,
     FeatureCardComponent,
+    DocsComponent,
   ],
   imports: [
     AppRoutingModule,

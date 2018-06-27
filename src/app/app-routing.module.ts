@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './public/about/about.component';
 import { DemoComponent } from './public/demo/demo.component';
 import { SignUpComponent } from './public/sign-up/sign-up.component';
+import { DocsComponent } from './public/docs/docs.component';
 
 const appRoutes: Routes = [
   {
@@ -14,6 +15,11 @@ const appRoutes: Routes = [
   {
     path: 'demo',
     component: DemoComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'docs',
+    component: DocsComponent,
     pathMatch: 'full',
   },
   {
