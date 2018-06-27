@@ -30,7 +30,7 @@
 
 <h4>Fields</h4>
 
-<ul>
+<ul class="limited-width">
   <li>
     <span class="code">results</span>: If the request was successful, contains a list of dictionaries with the keys
     <span class="code">"ingredientRaw"</span>, <span class="code">"ingredientParsed"</span>, and
@@ -75,10 +75,13 @@
             <li>
               Preparation notes refer to actions that a user takes after purchasing an ingredient. In some cases, such as "ground cinnamon"
               this is ambiguous because a user can purchase whole cinnamon sticks and grind them (which would treat grinding as a preparation
-              step) or a user can purchase the product "ground cinnamon" (which has no preparation steps). For ambiguous cases, the parser
-              attempts to choose the product that is more common. For example, "ground cinnamon" is treated as a product name because most
-              users purchase cinnamon pre-ground, but "diced celery" is interpreted as product="celery", preparationNotes="diced" because
-              users more commonly dice celery instead of buying pre-diced celery.
+              step) or a user can purchase the product "ground cinnamon" (which has no preparation steps).
+            </li>
+            <li>
+              For ambiguous cases, the parser attempts to choose the product that is more common. For example, "ground cinnamon"
+              is treated as a product name because most users purchase cinnamon pre-ground. In contrast, "diced celery" is interpreted as
+              <span class="code">product="celery"</span>, <span class="code">preparationNotes="diced"</span> because users more
+              commonly dice celery instead of buying pre-diced celery.
             </li>
           </ul>
         </li>
