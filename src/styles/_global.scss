@@ -23,7 +23,7 @@ body {
 h1 {
   @extend %font-roboto-regular;
   font-size: 3rem;
-  padding-bottom: 45px;
+  padding-bottom: 65px;
 }
 
 h2 {
@@ -45,5 +45,4 @@ a:active,
 a:visited {
   text-decoration: none;
   cursor: pointer;
-  color: inherit;
 }
