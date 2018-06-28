@@ -49,6 +49,7 @@ export class DocsComponent {
       "error": null
     }
   ],
+  "requestsRemaining": 27,
   "error": null
 }`.substring(1);
 }

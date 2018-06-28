@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  backendBaseUrl: 'https://api.ingredientparser.com',
+  backendBaseUrl: 'https://sandbox.ingredientparser.com',
 };
