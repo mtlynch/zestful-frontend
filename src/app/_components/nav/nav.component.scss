@@ -5,6 +5,7 @@
 }
 
 mat-toolbar.full-size {
+  padding-left: 4%;
   @include respond-to('small') {
     display: none;
   }
