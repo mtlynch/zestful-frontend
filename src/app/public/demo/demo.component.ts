@@ -17,6 +17,11 @@ export class DemoComponent implements OnInit {
   error: string;
   requestsRemaining: number = null;
   curlExample: string = null;
+  readonly exampleInputs: string[] = [
+    '1 1/2 cups finely chopped red onions',
+    '½ tsp brown sugar',
+    '2 tbsp butter',
+  ];
 
   constructor(private parserService: ParserService, private curlCmdPipe: CurlCmdPipe) { }
 
@@ -57,6 +62,11 @@ export class DemoComponent implements OnInit {
     this.ingredientParsed = null;
     this.error = null;
     this.curlExample = null;
+  }
+
+  parseExample(exampleIngredient: string) {
+    this.ingredientRaw = exampleIngredient;
+    this.parse(exampleIngredient);
   }
 
   private isString(x) {

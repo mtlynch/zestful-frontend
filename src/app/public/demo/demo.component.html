@@ -1,11 +1,21 @@
 <h1>Developer Demo</h1>
-<form>
-  <mat-form-field class="input-full-width" floatPlaceholder="never" hideRequiredMarker>
-    <input matInput placeholder="1 1/2 cups finely chopped red onions" name="ingredientRaw" [(ngModel)]="ingredientRaw" required>
+<p>Enter a recipe ingredient below to see how Ingredient Parser works:</p>
+<form class="demo-form">
+  <mat-form-field class="input-full-width" hideRequiredMarker>
+    <input matInput placeholder="Enter ingredient" name="ingredientRaw" [(ngModel)]="ingredientRaw" required>
   </mat-form-field>
   <button mat-raised-button color="primary" (click)="parse(ingredientRaw)" [disabled]="isWaitingForParseResult || !ingredientRaw">Parse</button>
   <button mat-raised-button (click)="reset()" [disabled]="!ingredientRaw">Reset</button>
 </form>
+<div *ngIf="!ingredientRaw">
+  <p>Or try one of these examples:</p>
+  <div class="example-inputs">
+    <mat-card
+      class="example-input-card code"
+      *ngFor="let example of exampleInputs"
+      (click)="parseExample(example)">{{ example }}</mat-card>
+  </div>
+</div>
 <div *ngIf="isWaitingForParseResult" class="top-level">
   <mat-spinner></mat-spinner>
 </div>

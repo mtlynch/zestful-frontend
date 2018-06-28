@@ -1,20 +1,31 @@
 @import '~styles/breakpoints';
 
-mat-toolbar {
-  margin-bottom: 10%;
-  @include respond-to('small') {
-    font-size: 14pt;
-    margin-bottom: 10px;
-  }
-  @include respond-to('x-small') {
-    font-size: 12pt;
+.example-inputs {
+  margin: 50px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  @include respond-to('medium') {
+    flex-direction: column;
   }
 }
 
-form {
+.example-input-card {
+  margin-right: 30px;
+  cursor: pointer;
+  background: #8e79c4;
+  @include respond-to('medium') {
+    flex-direction: column;
+    margin: 10px 0;
+  }
+}
+
+.demo-form {
   min-width: 150px;
   max-width: 500px;
   width: 100%;
+  margin: 50px 0;
 }
 
 .input-full-width {
