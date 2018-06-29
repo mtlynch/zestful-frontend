@@ -32,7 +32,7 @@ export class DocsComponent {
       "ingredientRaw": "1 1/2 cups finely chopped red onions",
       "ingredientParsed": {
         "quantity": 1.5,
-        "unit": "tablespoon",
+        "unit": "cup",
         "product": "red onions",
         "preparationNotes": "finely chopped"
       },
