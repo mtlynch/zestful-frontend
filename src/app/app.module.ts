@@ -34,7 +34,6 @@ import { NavComponent } from './_components/nav/nav.component';
 import { CodeSnippetComponent } from './_components/code-snippet/code-snippet.component';
 
 // Public pages
-import { SignUpComponent } from './public/sign-up/sign-up.component';
 import { DemoComponent } from './public/demo/demo.component';
 import { AboutComponent } from './public/about/about.component';
 import { FeatureCardComponent } from './_components/feature-card/feature-card.component';
@@ -47,7 +46,6 @@ import { DocsComponent } from './public/docs/docs.component';
     DemoComponent,
     MailingListComponent,
     NavComponent,
-    SignUpComponent,
     CodeSnippetComponent,
     AboutComponent,
     FeatureCardComponent,
