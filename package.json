@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start": "ng serve",
-    "build": "ng run ingredient-demo-frontend:build --target production --aot",
-    "coverage": "ng test --environment=dev --no-watch --code-coverage --single-run=true",
+    "build": "ng build ingredient-demo-frontend --configuration=production",
+    "coverage": "ng test --no-watch --code-coverage --single-run=true",
     "lint": "ng lint && scssfmt --recursive './src/**/**/*.scss' --diff",
     "update-deps": "npm update"
   },
