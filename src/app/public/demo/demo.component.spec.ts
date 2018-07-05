@@ -1,8 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Injectable, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
+import { Observable, of } from 'rxjs';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { ParseResults } from '../../_models/parse-result';
@@ -15,7 +14,7 @@ import { DemoComponent } from './demo.component';
 export class MockParserService {
 
   public parseIngredient(ingredientRaw: string) {
-    return Observable.of<ParseResults>({});
+    return of<ParseResults>({});
   }
 }
 
