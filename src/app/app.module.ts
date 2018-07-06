@@ -15,6 +15,7 @@ import {
   MatSidenavModule,
   MatToolbarModule,
 } from '@angular/material';
+import { HighlightModule } from 'ngx-highlightjs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -31,7 +32,6 @@ import { ParserService } from './_services/parser.service';
 // Components
 import { MailingListComponent } from './_components/mailing-list/mailing-list.component';
 import { NavComponent } from './_components/nav/nav.component';
-import { CodeSnippetComponent } from './_components/code-snippet/code-snippet.component';
 
 // Public pages
 import { DemoComponent } from './public/demo/demo.component';
@@ -46,7 +46,6 @@ import { DocsComponent } from './public/docs/docs.component';
     DemoComponent,
     MailingListComponent,
     NavComponent,
-    CodeSnippetComponent,
     AboutComponent,
     FeatureCardComponent,
     DocsComponent,
@@ -56,6 +55,7 @@ import { DocsComponent } from './public/docs/docs.component';
     BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
+    HighlightModule.forRoot({ theme: 'vs2015' }),
     HttpClientModule,
     MatButtonModule,
     MatCardModule,
