@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './public/about/about.component';
 import { DemoComponent } from './public/demo/demo.component';
 import { DocsComponent } from './public/docs/docs.component';
+import { TermsOfServiceComponent } from './public/terms-of-service/terms-of-service.component';
 
 const appRoutes: Routes = [
   {
@@ -24,6 +25,11 @@ const appRoutes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'terms-of-service',
+    component: TermsOfServiceComponent,
     pathMatch: 'full',
   },
   {
