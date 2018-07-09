@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('ingredient-demo-frontend App', () => {
+describe('zestful-frontend App', () => {
   let page: AppPage;
 
   beforeEach(() => {

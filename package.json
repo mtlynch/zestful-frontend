@@ -1,10 +1,10 @@
 {
-  "name": "ingredient-demo-frontend",
+  "name": "zestful-frontend",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "start": "ng serve",
-    "build": "ng build ingredient-demo-frontend --configuration=production",
+    "build": "ng build zestful-frontend --configuration=production",
     "coverage": "ng test --no-watch --code-coverage --single-run=true",
     "lint": "ng lint && scssfmt --recursive './src/**/**/*.scss' --diff",
     "update-deps": "npm update"
