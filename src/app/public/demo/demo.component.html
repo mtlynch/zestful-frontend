@@ -1,5 +1,5 @@
 <h1>Developer Demo</h1>
-<p>Enter a recipe ingredient below to see how Ingredient Parser works:</p>
+<p>Enter a recipe ingredient below to see how Zestful's ingredient parser works:</p>
 <form class="demo-form">
   <mat-form-field class="input-full-width" hideRequiredMarker>
     <input matInput placeholder="Enter ingredient" name="ingredientRaw" [(ngModel)]="ingredientRaw" required>
@@ -10,10 +10,7 @@
 <div *ngIf="!ingredientRaw">
   <p>Or try one of these examples:</p>
   <div class="example-inputs">
-    <mat-card
-      class="example-input-card code"
-      *ngFor="let example of exampleInputs"
-      (click)="parseExample(example)">{{ example }}</mat-card>
+    <mat-card class="example-input-card code" *ngFor="let example of exampleInputs" (click)="parseExample(example)">{{ example }}</mat-card>
   </div>
 </div>
 <div *ngIf="isWaitingForParseResult" class="top-level">
@@ -22,9 +19,7 @@
 <div class="error" *ngIf="error" class="top-level">
   <p>{{ error }}</p>
 </div>
-<div
-  class="result-cards top-level"
-  *ngIf="!isWaitingForParseResult && ingredientParsed">
+<div class="result-cards top-level" *ngIf="!isWaitingForParseResult && ingredientParsed">
   <mat-card *ngIf="ingredientParsed.quantity">
     <mat-card-title>{{ ingredientParsed.quantity | number:'1.0-2' }}</mat-card-title>
     <mat-card-subtitle>quantity</mat-card-subtitle>
@@ -46,6 +41,7 @@
   <span class="fieldName">Requests remaining</span>: {{ requestsRemaining }}
 </div>
 <div *ngIf="curlExample" class="top-level">
-  <div>Or, using <span class="code">curl</span>:</div>
+  <div>Or, using
+    <span class="code">curl</span>:</div>
   <pre><code highlight [code]="curlExample"></code></pre>
 </div>
