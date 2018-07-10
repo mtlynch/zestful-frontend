@@ -5,7 +5,7 @@
   "scripts": {
     "start": "ng serve",
     "build": "ng build zestful-frontend --configuration=production",
-    "coverage": "ng test --no-watch --code-coverage --single-run=true",
+    "coverage": "ng test --no-watch --code-coverage",
     "lint": "ng lint && scssfmt --recursive './src/**/**/*.scss' --diff",
     "update-deps": "npm update"
   },
