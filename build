@@ -8,6 +8,6 @@ set -e
 
 npm run lint
 
-npm run coverage -- --browser ChromeHeadlessCI
+npm run coverage -- --browsers ChromeHeadlessCI
 
 npm run build
