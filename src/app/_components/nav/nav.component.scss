@@ -6,6 +6,7 @@
 
 mat-toolbar.full-size {
   padding-left: 4%;
+  height: 73px;
   @include respond-to('small') {
     display: none;
   }
@@ -13,14 +14,10 @@ mat-toolbar.full-size {
 
 mat-toolbar.compressed {
   display: none;
-  padding-top: 10px;
   @include respond-to('small') {
+    padding-top: 5px;
     display: block;
   }
-}
-
-.menu-button {
-  margin-right: 45px;
 }
 
 .sidenav-container {
@@ -33,6 +30,15 @@ mat-toolbar.compressed {
   padding: 25px 35px;
 }
 
-.site-name a {
-  color: white;
+.logo-link {
+  max-height: 47px;
+}
+
+.logo {
+  max-height: 47px;
+  @include respond-to('small') {
+    max-height: 40px;
+    vertical-align: middle;
+    padding-left: 15px;
+  }
 }

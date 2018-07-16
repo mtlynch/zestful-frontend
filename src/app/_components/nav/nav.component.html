@@ -1,7 +1,7 @@
 <mat-toolbar color="primary" class="full-size">
-  <span class="site-name">
-    <a [routerLink]="['/']">Zestful</a>
-  </span>
+  <a class="logo-link" [routerLink]="['/']">
+    <img class="logo" src="assets/img/logo.png" />
+  </a>
 
   <span class="fill-remaining-space"></span>
 
@@ -17,9 +17,9 @@
   <button mat-icon-button class="menu-button" (click)="sidenav.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-  <span class="site-name">
-    <a [routerLink]="['/']">Zestful</a>
-  </span>
+  <a [routerLink]="['/']">
+    <img class="logo" src="assets/img/logo.png" />
+  </a>
 
   <span class="fill-remaining-space"></span>
 </mat-toolbar>
