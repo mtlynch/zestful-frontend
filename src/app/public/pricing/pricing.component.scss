@@ -1,0 +1,91 @@
+@import '~styles/breakpoints';
+
+h2 {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  @include respond-to('small') {
+    margin-bottom: 10px;
+  }
+}
+
+.flex-grid {
+  display: flex;
+  justify-content: space-between;
+  @include respond-to('small') {
+    display: block;
+  }
+}
+
+.col {
+  flex: 1;
+  width: 5%;
+  margin-bottom: 50px;
+  @include respond-to('small') {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-top: 30px;
+  }
+}
+
+mat-card {
+  width: 325px;
+  margin-top: 55px;
+  @include respond-to('small') {
+    margin-top: 0px;
+    width: 100%;
+  }
+}
+
+mat-card.preferred-plan {
+  width: 400px;
+  height: 340px;
+  @include respond-to('small') {
+    width: 100%;
+  }
+}
+
+mat-card-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preferred-plan mat-card-title {
+  font-size: 20pt;
+}
+
+mat-card-subtitle {
+  font-size: 12pt;
+}
+
+.preferred-plan mat-card-subtitle {
+  font-size: 13pt;
+}
+
+mat-card-content {
+  @include respond-to('small') {
+    padding-left: 15px;
+  }
+}
+
+mat-card-content li {
+  margin-left: 4px;
+  font-size: 12pt;
+}
+
+.preferred-plan mat-card-content li {
+  margin-left: 4px;
+  font-size: 14pt;
+}
+
+mat-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+mat-card-actions a.preferred-plan {
+  font-size: 16pt;
+  margin-top: 20px;
+  padding: 20px;
+}
