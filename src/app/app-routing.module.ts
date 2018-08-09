@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './public/about/about.component';
 import { DemoComponent } from './public/demo/demo.component';
 import { DocsComponent } from './public/docs/docs.component';
+import { PricingComponent } from './public/pricing/pricing.component';
 import { TermsOfServiceComponent } from './public/terms-of-service/terms-of-service.component';
 
 const appRoutes: Routes = [
@@ -15,6 +16,11 @@ const appRoutes: Routes = [
   {
     path: 'demo',
     component: DemoComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'pricing',
+    component: PricingComponent,
     pathMatch: 'full',
   },
   {
@@ -34,7 +40,7 @@ const appRoutes: Routes = [
   },
   {
     path: '**',
-    component: DemoComponent,
+    component: AboutComponent,
   },
 ];
 
