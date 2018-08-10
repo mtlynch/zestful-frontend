@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {
   MatButtonModule,
@@ -40,6 +40,7 @@ import { FeatureCardComponent } from './_components/feature-card/feature-card.co
 import { DocsComponent } from './public/docs/docs.component';
 import { TermsOfServiceComponent } from './public/terms-of-service/terms-of-service.component';
 import { PricingComponent } from './public/pricing/pricing.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { PricingComponent } from './public/pricing/pricing.component';
     MatProgressSpinnerModule,
     MatSidenavModule,
     MatToolbarModule,
+    LayoutModule,
   ],
   providers: [CurlCmdPipe, ParserService],
   bootstrap: [AppComponent],

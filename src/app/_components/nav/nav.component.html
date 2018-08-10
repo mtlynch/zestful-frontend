@@ -1,51 +1,20 @@
-<mat-toolbar color="primary" class="full-size">
-  <a class="logo-link" [routerLink]="['/']">
-    <img class="logo" src="assets/img/logo.png" />
-  </a>
-
-  <span class="fill-remaining-space"></span>
-
-  <a mat-button [routerLink]="['/about']">About</a>
-  <a mat-button [routerLink]="['/demo']">Demo</a>
-  <a mat-button [routerLink]="['/pricing']">Pricing</a>
-  <a mat-button [routerLink]="['/docs']">Docs</a>
-  <a href="https://rapidapi.com/zestfuldata/api/Recipe%20and%20Ingredient%20Analysis" mat-button color="accent">Get Started</a>
-</mat-toolbar>
-
-<mat-toolbar color="primary" class="compressed">
-  <button mat-icon-button class="menu-button" (click)="sidenav.toggle()">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <a [routerLink]="['/']">
-    <img class="logo" src="assets/img/logo.png" />
-  </a>
-
-  <span class="fill-remaining-space"></span>
-</mat-toolbar>
-
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav mode="over" fixedInViewport="true" fixedTopGap="56">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+    <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list>
-      <p class="sidenav-button">
-        <a [routerLink]="['/about']" (click)="sidenav.toggle()">About</a>
-        <br />
-      </p>
-      <p class="sidenav-button">
-        <a [routerLink]="['/pricing']" (click)="sidenav.toggle()">Pricing</a>
-        <br />
-      </p>
-      <p class="sidenav-button">
-        <a [routerLink]="['/demo']" (click)="sidenav.toggle()">Demo</a>
-        <br />
-      </p>
-      <p class="sidenav-button">
-        <a [routerLink]="['/docs']" (click)="sidenav.toggle()">Docs</a>
-        <br />
-      </p>
-      <p class="sidenav-button">
-        <a href="https://rapidapi.com/zestfuldata/api/Recipe%20and%20Ingredient%20Analysis">Get Started</a>
-        <br />
-      </p>
+      <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a>
     </mat-nav-list>
   </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>zestful-frontend</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
 </mat-sidenav-container>
