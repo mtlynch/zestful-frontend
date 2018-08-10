@@ -10,6 +10,9 @@ CONTAINER_NAME="zestful-frontend"
 
 docker version
 
+# Clear any previous container.
+docker rm -f "$CONTAINER_NAME" &> /dev/null || true
+
 docker run \
   --tty \
   --detach \
