@@ -23,7 +23,12 @@ body {
 h1 {
   @extend %font-roboto-regular;
   font-size: 3rem;
-  padding-bottom: 65px;
+  padding-top: 20px;
+  padding-bottom: 45px;
+  @include respond-to('small') {
+    padding-top: 20px;
+    padding-bottom: 35px;
+  }
 }
 
 h2 {
