@@ -22,6 +22,9 @@ mat-toolbar.compressed {
 
 .sidenav-container {
   height: 100%;
+  // Workaround for a bug on iOS + Safari
+  // https://github.com/angular/material2/issues/11715#issuecomment-408956246
+  overflow: visible;
 }
 
 .sidenav {
