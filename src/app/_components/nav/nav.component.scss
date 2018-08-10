@@ -21,13 +21,16 @@ mat-toolbar.compressed {
 }
 
 .sidenav-container {
-  flex: 1 0 auto;
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
   margin-top: 56px;
 }
 
-.sidenav-button {
-  font-size: 26pt;
-  padding: 25px 35px;
+mat-nav-list a {
+  font-size: 18pt;
 }
 
 .logo-link {
