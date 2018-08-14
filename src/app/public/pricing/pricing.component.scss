@@ -30,6 +30,7 @@ h2 {
 mat-card {
   width: 325px;
   margin-top: 55px;
+  padding-bottom: 50px;
   @include respond-to('small') {
     margin-top: 0px;
     width: 100%;
@@ -38,31 +39,38 @@ mat-card {
 
 mat-card.preferred-plan {
   width: 400px;
-  height: 340px;
   @include respond-to('small') {
     width: 100%;
   }
 }
 
 mat-card-title {
+  font-size: 22pt;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.preferred-plan mat-card-title {
+  font-size: 28pt;
+  margin-bottom: 40px;
+}
+
+mat-card-subtitle {
+  font-size: 14pt;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.preferred-plan mat-card-title {
-  font-size: 20pt;
-}
-
-mat-card-subtitle {
-  font-size: 12pt;
-}
-
 .preferred-plan mat-card-subtitle {
-  font-size: 13pt;
+  font-size: 14pt;
 }
 
 mat-card-content {
+  margin-top: 50px;
+  padding-left: 15px;
   @include respond-to('small') {
     padding-left: 15px;
   }
@@ -70,22 +78,39 @@ mat-card-content {
 
 mat-card-content li {
   margin-left: 4px;
+  margin-bottom: 15px;
   font-size: 12pt;
+  @include respond-to('small') {
+    font-size: 14pt;
+  }
 }
 
 .preferred-plan mat-card-content li {
   margin-left: 4px;
-  font-size: 14pt;
+  font-size: 16pt;
 }
 
 mat-card-actions {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 30px;
+}
+
+mat-card-actions a {
+  @include respond-to('small') {
+    font-size: 14pt;
+    padding: 20px 30px;
+  }
 }
 
 mat-card-actions a.preferred-plan {
   font-size: 16pt;
   margin-top: 20px;
+  margin-bottom: 30px;
   padding: 20px;
+  @include respond-to('small') {
+    font-size: 18pt;
+    padding: 20px 30px;
+  }
 }
