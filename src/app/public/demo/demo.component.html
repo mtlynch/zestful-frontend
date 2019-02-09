@@ -10,7 +10,8 @@
 <div *ngIf="!ingredientRaw">
   <p>Or try one of these examples:</p>
   <div class="example-inputs">
-    <mat-card class="example-input-card code" *ngFor="let example of exampleInputs" (click)="parseExample(example)">{{ example }}</mat-card>
+    <mat-card class="example-input-card code" *ngFor="let example of exampleInputs" (click)="parseExample(example)">{{
+      example }}</mat-card>
   </div>
 </div>
 <div *ngIf="isWaitingForParseResult" class="top-level">
@@ -44,4 +45,8 @@
   <div>Or, using
     <span class="code">curl</span>:</div>
   <pre><code highlight [code]="curlExample"></code></pre>
+</div>
+<div *ngIf="jsExample" class="top-level">
+  <div>Or, using JavaScript:</div>
+  <pre><code highlight [code]="jsExample"></code></pre>
 </div>

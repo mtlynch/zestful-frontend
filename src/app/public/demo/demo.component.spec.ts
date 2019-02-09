@@ -7,6 +7,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ParseResults } from '../../_models/parse-result';
 import { ParserService } from '../../_services/parser.service';
 import { CurlCmdPipe } from '../../_pipes/curl-cmd.pipe';
+import { JsExamplePipe } from '../../_pipes/js-example.pipe';
 
 import { DemoComponent } from './demo.component';
 
@@ -24,18 +25,19 @@ describe('DemoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [DemoComponent, CurlCmdPipe],
+      declarations: [DemoComponent, CurlCmdPipe, JsExamplePipe],
       imports: [
         HttpClientTestingModule,
         FormsModule,
       ],
       providers: [
         CurlCmdPipe,
+        JsExamplePipe,
         { provide: ParserService, useClass: MockParserService },
       ],
       schemas: [NO_ERRORS_SCHEMA],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

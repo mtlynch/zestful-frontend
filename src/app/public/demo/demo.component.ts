@@ -4,6 +4,7 @@ import { environment } from '../../../environments/environment';
 import { IngredientParsed, ParseResults } from '../../_models/parse-result';
 import { ParserService, ParseRequest } from '../../_services/parser.service';
 import { CurlCmdPipe } from '../../_pipes/curl-cmd.pipe';
+import { JsExamplePipe } from '../../_pipes/js-example.pipe';
 
 @Component({
   selector: 'app-demo',
@@ -17,15 +18,19 @@ export class DemoComponent implements OnInit {
   error: string;
   requestsRemaining: number = null;
   curlExample: string = null;
+  jsExample: string = null;
   readonly exampleInputs: string[] = [
     '1 1/2 cups finely chopped red onions',
     '½ tsp brown sugar',
     '2 tbsp butter',
   ];
 
-  constructor(private parserService: ParserService, private curlCmdPipe: CurlCmdPipe) { }
+  constructor(
+    private parserService: ParserService,
+    private curlCmdPipe: CurlCmdPipe,
+    private jsExamplePipe: JsExamplePipe) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   parse(raw: string) {
     this.isWaitingForParseResult = true;
@@ -36,6 +41,7 @@ export class DemoComponent implements OnInit {
       (response) => {
         this.isWaitingForParseResult = false;
         this.curlExample = this.curlCmdPipe.transform(raw, environment.backendBaseUrl);
+        this.jsExample = this.jsExamplePipe.transform(raw, environment.backendBaseUrl);
         const parseResult = response;
         if (parseResult.error) {
           this.error = parseResult.error;
@@ -62,6 +68,7 @@ export class DemoComponent implements OnInit {
     this.ingredientParsed = null;
     this.error = null;
     this.curlExample = null;
+    this.jsExamplePipe = null;
   }
 
   parseExample(exampleIngredient: string) {
