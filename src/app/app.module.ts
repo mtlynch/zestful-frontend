@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {
   MatButtonModule,
@@ -25,6 +25,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Pipes
 import { CurlCmdPipe } from './_pipes/curl-cmd.pipe';
+import { JsExamplePipe } from './_pipes/js-example.pipe';
 
 // Services
 import { ParserService } from './_services/parser.service';
@@ -45,6 +46,7 @@ import { PricingComponent } from './public/pricing/pricing.component';
   declarations: [
     AppComponent,
     CurlCmdPipe,
+    JsExamplePipe,
     DemoComponent,
     MailingListComponent,
     NavComponent,
@@ -73,7 +75,7 @@ import { PricingComponent } from './public/pricing/pricing.component';
     MatSidenavModule,
     MatToolbarModule,
   ],
-  providers: [CurlCmdPipe, ParserService],
+  providers: [CurlCmdPipe, JsExamplePipe, ParserService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -5,6 +5,7 @@ import { DemoComponent } from './public/demo/demo.component';
 import { FormsModule } from '@angular/forms';
 import { ParserService } from './_services/parser.service';
 import { CurlCmdPipe } from './_pipes/curl-cmd.pipe';
+import { JsExamplePipe } from './_pipes/js-example.pipe';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('AppComponent', () => {
@@ -13,6 +14,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         CurlCmdPipe,
+        JsExamplePipe,
         DemoComponent,
       ],
       imports: [
@@ -22,6 +24,7 @@ describe('AppComponent', () => {
       providers: [
         ParserService,
         CurlCmdPipe,
+        JsExamplePipe,
       ],
       schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
