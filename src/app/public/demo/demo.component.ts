@@ -26,9 +26,9 @@ export class DemoComponent implements OnInit {
   ];
 
   constructor(
-    private parserService: ParserService,
-    private curlCmdPipe: CurlCmdPipe,
-    private jsExamplePipe: JsExamplePipe) { }
+    private readonly parserService: ParserService,
+    private readonly curlCmdPipe: CurlCmdPipe,
+    private readonly jsExamplePipe: JsExamplePipe) { }
 
   ngOnInit() { }
 
@@ -68,7 +68,7 @@ export class DemoComponent implements OnInit {
     this.ingredientParsed = null;
     this.error = null;
     this.curlExample = null;
-    this.jsExamplePipe = null;
+    this.jsExample = null;
   }
 
   parseExample(exampleIngredient: string) {
