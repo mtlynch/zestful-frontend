@@ -4,7 +4,8 @@
   <mat-form-field class="input-full-width" hideRequiredMarker>
     <input matInput placeholder="Enter ingredient" name="ingredientRaw" [(ngModel)]="ingredientRaw" required>
   </mat-form-field>
-  <button mat-raised-button color="primary" (click)="parse(ingredientRaw)" [disabled]="isWaitingForParseResult || !ingredientRaw">Parse</button>
+  <button mat-raised-button color="primary" (click)="parse(ingredientRaw)"
+    [disabled]="isWaitingForParseResult || !ingredientRaw">Parse</button>
   <button mat-raised-button (click)="reset()" [disabled]="!ingredientRaw">Reset</button>
 </form>
 <div *ngIf="!ingredientRaw">

@@ -7,15 +7,15 @@ import { ParseResults } from '../_models/parse-result';
 export class ParseRequest {
   constructor(
     public ingredients?: string[],
-  ) {}
+  ) { }
 }
 
 @Injectable()
 export class ParserService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  public parseIngredients(request: ParseRequest) : Observable<ParseResults> {
+  public parseIngredients(request: ParseRequest): Observable<ParseResults> {
 
     const httpOptions = {
       headers: new HttpHeaders({
