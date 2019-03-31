@@ -36,6 +36,7 @@ describe('ParserService', () => {
           ingredientParsed: {
             quantity: 2.0,
             unit: 'tablespoon',
+            productSizeModifier: null,
             product: 'Parmesan cheese',
             preparationNotes: 'shaved',
           },

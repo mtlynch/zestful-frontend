@@ -52,6 +52,7 @@ fetch("${backendUrl}/parseIngredients", {
             var parsed = result.ingredientParsed;
             console.log(\`Quantity: \$\{parsed.quantity\}\`);
             console.log(\`Unit: \$\{parsed.unit\}\`);
+            console.log(\`Product Size Modifier: \$\{parsed.productSizeModifier\}\`);
             console.log(\`Product: \$\{parsed.product\}\`);
             console.log(\`Preparation: \$\{parsed.preparationNotes\}\`);
         });
