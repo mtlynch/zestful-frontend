@@ -2,6 +2,7 @@ export class IngredientParsed {
   constructor(
     public quantity?: number,
     public unit?: string,
+    public productSizeModifier?: string,
     public product?: string,
     public preparationNotes?: string) { }
 }

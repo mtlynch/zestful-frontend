@@ -9,7 +9,7 @@ export class DocsComponent {
   public requestExample: string = `
 {
   "ingredients": [
-    "2 tablespoons butter",
+    "3 large Granny Smith apples",
     "1 1/2 cups finely chopped red onions",
     "½ tsp brown sugar"
   ]
@@ -19,11 +19,12 @@ export class DocsComponent {
 {
   "results": [
     {
-      "ingredientRaw": "2 tablespoons butter",
+      "ingredientRaw": "3 large Granny Smith apples",
       "ingredientParsed": {
-        "quantity": 2.0,
-        "unit": "tablespoon",
-        "product": "butter",
+        "quantity": 3.0,
+        "unit": null,
+        "productSizeModifier": "large",
+        "product": "Granny Smith apples",
         "preparationNotes": null
       },
       "error": null
@@ -33,6 +34,7 @@ export class DocsComponent {
       "ingredientParsed": {
         "quantity": 1.5,
         "unit": "cup",
+        "productSizeModifier": null,
         "product": "red onions",
         "preparationNotes": "finely chopped"
       },
@@ -43,6 +45,7 @@ export class DocsComponent {
       "ingredientParsed": {
         "quantity": 0.5,
         "unit": "teaspoon",
+        "productSizeModifier": null,
         "product": "brown sugar",
         "preparationNotes": null
       },

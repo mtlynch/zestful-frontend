@@ -30,6 +30,10 @@
     <mat-card-title>{{ ingredientParsed.unit }}</mat-card-title>
     <mat-card-subtitle>units</mat-card-subtitle>
   </mat-card>
+  <mat-card *ngIf="ingredientParsed.productSizeModifier">
+    <mat-card-title>{{ ingredientParsed.productSizeModifier }}</mat-card-title>
+    <mat-card-subtitle>product size modifier</mat-card-subtitle>
+  </mat-card>
   <mat-card *ngIf="ingredientParsed.product">
     <mat-card-title>{{ ingredientParsed.product }}</mat-card-title>
     <mat-card-subtitle>product</mat-card-subtitle>

@@ -22,7 +22,7 @@ export class DemoComponent implements OnInit {
   readonly exampleInputs: string[] = [
     '1 1/2 cups finely chopped red onions',
     '½ tsp brown sugar',
-    '2 tbsp butter',
+    '3 large Granny Smith apples',
   ];
 
   constructor(

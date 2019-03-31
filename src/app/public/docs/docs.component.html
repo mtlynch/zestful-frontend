@@ -49,6 +49,7 @@
         containing the keys
         <span class="code">"quantity"</span>,
         <span class="code">"unit"</span>,
+        <span class="code">"productSizeModifier"</span>,
         <span class="code">"product"</span>, and
         <span class="code">"preparationNotes"</span>.
         <ul>
@@ -68,16 +69,15 @@
             </ul>
           </li>
           <li>
+            <span class="code">productSizeModifier</span>: Adjectives that describe <span class="code">product</span>'s
+            size (e.g.,
+            <span class="code">"large"</span>,
+            <span class="code">"small"</span>).
+          </li>
+          <li>
             <span class="code">product</span>: The product a user buys to obtain this ingredient (e.g.,
             <span class="code">"ground beef"</span>,
             <span class="code">"brown sugar"</span>).
-            <ul>
-              <li>
-                Size qualifications (e.g.,
-                <span class="code">"large onion"</span>,
-                <span class="code">jumbo shrimp</span>) are treated as part of a product's name.
-              </li>
-            </ul>
           </li>
           <li>
             <span class="code">preparationNotes</span>: Instructions to the user about how to prepare this ingredient
