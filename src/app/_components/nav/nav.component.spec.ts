@@ -12,7 +12,7 @@ describe('NavComponent', () => {
       declarations: [NavComponent],
       schemas: [NO_ERRORS_SCHEMA],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

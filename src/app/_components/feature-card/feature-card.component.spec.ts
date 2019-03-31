@@ -12,7 +12,7 @@ describe('FeatureCardComponent', () => {
       declarations: [FeatureCardComponent],
       schemas: [NO_ERRORS_SCHEMA],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
