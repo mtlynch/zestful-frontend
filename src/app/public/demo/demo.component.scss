@@ -63,11 +63,19 @@ div.result-cards {
   }
 }
 
-mat-card {
+.result-cards mat-card {
   margin-right: 25px;
   @include respond-to('medium') {
     margin-right: 2px;
   }
+}
+
+.confidence-card {
+  max-width: 120px;
+  @include respond-to('medium') {
+    max-width: inherit;
+  }
+  background: rgb(177, 241, 250);
 }
 
 mat-expansion-panel {
