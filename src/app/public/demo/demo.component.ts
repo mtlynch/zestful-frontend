@@ -15,12 +15,13 @@ export class DemoComponent implements OnInit {
   ingredientRaw: string;
   isWaitingForParseResult: boolean = false;
   ingredientParsed: IngredientParsed;
+  confidence: number;
   error: string;
   requestsRemaining: number = null;
   curlExample: string = null;
   jsExample: string = null;
   readonly exampleInputs: string[] = [
-    '1 1/2 cups finely chopped red onions',
+    '2 1/2 tablespoons finely chopped parsley',
     '½ tsp brown sugar',
     '3 large Granny Smith apples',
   ];
@@ -45,9 +46,11 @@ export class DemoComponent implements OnInit {
         const parseResult = response;
         if (parseResult.error) {
           this.error = parseResult.error;
+          this.confidence = null;
           this.ingredientParsed = null;
         } else {
           this.ingredientParsed = parseResult.results[0].ingredientParsed;
+          this.confidence = parseResult.results[0].confidence;
           this.requestsRemaining = parseResult.requestsRemaining;
           this.error = null;
         }
@@ -66,6 +69,7 @@ export class DemoComponent implements OnInit {
   reset() {
     this.ingredientRaw = '';
     this.ingredientParsed = null;
+    this.confidence = null;
     this.error = null;
     this.curlExample = null;
     this.jsExample = null;

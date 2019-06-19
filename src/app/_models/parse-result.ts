@@ -11,6 +11,7 @@ export class IngredientResult {
   constructor(
     public ingredientRaw?: string,
     public ingredientParsed?: IngredientParsed,
+    public confidence?: number,
     public error?: string) { }
 }
 

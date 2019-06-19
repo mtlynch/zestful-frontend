@@ -22,7 +22,6 @@ fetch("${backendUrl}/parseIngredients", {
     })
 }).then(
     function(response) {
-
       // Check for successful response from Zestful server.
       if (response.status !== 200) {
         console.log('Error talking to Zestful server: ' + response.status);
@@ -54,7 +53,8 @@ fetch("${backendUrl}/parseIngredients", {
             console.log(\`Unit: \$\{parsed.unit\}\`);
             console.log(\`Product Size Modifier: \$\{parsed.productSizeModifier\}\`);
             console.log(\`Product: \$\{parsed.product\}\`);
-            console.log(\`Preparation: \$\{parsed.preparationNotes\}\`);
+            console.log(\`Preparation Notes: \$\{parsed.preparationNotes\}\`);
+            console.log(\`Confidence: \$\{result.confidence\}\`);
         });
       });
     }

@@ -10,7 +10,7 @@ export class DocsComponent {
 {
   "ingredients": [
     "3 large Granny Smith apples",
-    "1 1/2 cups finely chopped red onions",
+    "2 1/2 tablespoons finely chopped parsley",
     "½ tsp brown sugar"
   ]
 }`.substring(1);
@@ -27,17 +27,19 @@ export class DocsComponent {
         "product": "Granny Smith apples",
         "preparationNotes": null
       },
+      "confidence": 0.9242,
       "error": null
     },
     {
-      "ingredientRaw": "1 1/2 cups finely chopped red onions",
+      "ingredientRaw": "2 1/2 tablespoons finely chopped parsley",
       "ingredientParsed": {
-        "quantity": 1.5,
-        "unit": "cup",
+        "quantity": 2.5,
+        "unit": "tablespoon",
         "productSizeModifier": null,
-        "product": "red onions",
+        "product": "parsley",
         "preparationNotes": "finely chopped"
       },
+      "confidence": 0.9453,
       "error": null
     },
     {
@@ -49,6 +51,7 @@ export class DocsComponent {
         "product": "brown sugar",
         "preparationNotes": null
       },
+      "confidence": 0.9262,
       "error": null
     }
   ],
