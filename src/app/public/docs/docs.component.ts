@@ -31,15 +31,15 @@ export class DocsComponent {
       "error": null
     },
     {
-      "ingredientRaw": "1 1/2 cups finely chopped red onions",
+      "ingredientRaw": "2 1/2 tablespoons finely chopped parsley",
       "ingredientParsed": {
-        "quantity": 1.5,
-        "unit": "cup",
+        "quantity": 2.5,
+        "unit": "tablespoon",
         "productSizeModifier": null,
-        "product": "red onions",
+        "product": "parsley",
         "preparationNotes": "finely chopped"
       },
-      "confidence": 0.5684,
+      "confidence": 0.9453,
       "error": null
     },
     {
