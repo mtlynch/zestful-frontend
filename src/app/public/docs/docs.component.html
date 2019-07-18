@@ -105,6 +105,49 @@
               </li>
             </ul>
           </li>
+          <li>
+            <span class="code">usdaInfo</span>: If Zestful can match the ingredient to a food in the USDA database, this
+            contains a dictionary of information about the matching USDA entry.
+            <ul>
+              <li>
+                <span class="code">fdcId</span>: The FDC ID for the food in the USDA FoodData Central database (e.g., <a
+                  href="https://fdc.nal.usda.gov/fdc-app.html#/food-details/168833/nutrients">"168833"</a>)
+              </li>
+              <li>
+                <span class="code">matchMethod</span>: The method that Zestful used to match the ingredient to a USDA
+                entry. This can be one of the following values:
+                <ul>
+                  <li><span class="code">exact</span>: Zestful found an exact match for this product in the USDA
+                    database.</li>
+                  <li><span class="code">closestUnbranded</span>: Zestful could not find an exact equivalent USDA entry,
+                    so it matched the ingredient to a closely related unbranded USDA product.
+                    <ul>
+                      <li>e.g., USDA has no exact
+                        match for "light brown sugar", so Zestful would match this ingredient to <a
+                          href="https://fdc.nal.usda.gov/fdc-app.html#/food-details/168833/nutrients">"Sugars,
+                          brown."</a></li>
+                    </ul>
+                  </li>
+                  <li><span class="code">closestBranded</span>: Zestful could not find an exact or unbranded equivalent
+                    USDA entry, so it matched the ingredient to a branded USDA product.
+                    <ul>
+                      <li>e.g., USDA has no exact
+                        match for "apple cider vinegar", so Zestful would match this ingredient to <a
+                          href="https://fdc.nal.usda.gov/fdc-app.html#/food-details/411851/nutrients">"BRAGG, ORGANIC
+                          APPLE CIDER VINEGAR."</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <span class="code">category</span>: The USDA category for the ingredient (e.g., "Sweets").
+              </li>
+              <li>
+                <span class="code">description</span>: The name of the ingredient in the USDA database (e.g., "Sugars,
+                brown").
+              </li>
+            </ul>
+          </li>
         </ul>
       </li>
       <li>

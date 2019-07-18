@@ -25,7 +25,13 @@ export class DocsComponent {
         "unit": null,
         "productSizeModifier": "large",
         "product": "Granny Smith apples",
-        "preparationNotes": null
+        "preparationNotes": null,
+        "usdaInfo": {
+            "category": "Fruits and Fruit Juices",
+            "description": "Apples, raw, granny smith, with skin (Includes foods for USDA's Food Distribution Program)",
+            "fdcId": "168203",
+            "matchMethod": "exact"
+        }
       },
       "confidence": 0.9242,
       "error": null
@@ -37,7 +43,13 @@ export class DocsComponent {
         "unit": "tablespoon",
         "productSizeModifier": null,
         "product": "parsley",
-        "preparationNotes": "finely chopped"
+        "preparationNotes": "finely chopped",
+        "usdaInfo": {
+            "category": "Vegetables and Vegetable Products",
+            "description": "Parsley, fresh",
+            "fdcId": "170416",
+            "matchMethod": "exact"
+        }
       },
       "confidence": 0.9453,
       "error": null
@@ -49,7 +61,13 @@ export class DocsComponent {
         "unit": "teaspoon",
         "productSizeModifier": null,
         "product": "brown sugar",
-        "preparationNotes": null
+        "preparationNotes": null,
+        "usdaInfo": {
+            "category": "Sweets",
+            "description": "Sugars, brown",
+            "fdcId": "168833",
+            "matchMethod": "exact"
+        }
       },
       "confidence": 0.9262,
       "error": null
