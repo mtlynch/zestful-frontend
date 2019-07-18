@@ -1,3 +1,5 @@
+@import '~styles/breakpoints';
+
 h2 {
   margin-bottom: 25px;
 }
@@ -15,7 +17,7 @@ h4 {
 }
 
 pre {
-  max-width: 800px;
+  max-width: 1000px;
   font-size: 11pt;
 }
 
@@ -44,5 +46,5 @@ p .code {
 }
 
 .limited-width {
-  max-width: 800px;
+  max-width: 1000px;
 }
