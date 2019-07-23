@@ -1,10 +1,19 @@
+export class UsdaInfo {
+  constructor(
+    public fdcId?: string,
+    public matchMethod?: string,
+    public category?: string,
+    public description?: string) { }
+}
+
 export class IngredientParsed {
   constructor(
     public quantity?: number,
     public unit?: string,
     public productSizeModifier?: string,
     public product?: string,
-    public preparationNotes?: string) { }
+    public preparationNotes?: string,
+    public usdaInfo?: UsdaInfo) { }
 }
 
 export class IngredientResult {
