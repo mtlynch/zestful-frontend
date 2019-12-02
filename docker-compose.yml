@@ -1,0 +1,12 @@
+version: "3.2"
+services:
+  zestful:
+    image: "node:10.17.0"
+    ports:
+      - 4300:4300
+    volumes:
+      - /app/node_modules
+      - ./:/app
+      - ./docker-entrypoint.sh:/app/docker-entrypoint.sh
+    working_dir: /app
+    entrypoint: ./docker-entrypoint.sh
